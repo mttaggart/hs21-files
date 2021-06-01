@@ -1,0 +1,28 @@
+{
+    "questions": [
+        {
+            "question": "Who was the creator of Linux?",
+            "answer":   "Linus Torvalds",
+            "feedback": "This one is easily Googleable. Or, review the session!"
+        },
+        {
+            "question": "Where was the UNIX operating system created?",
+            "answer":   "Bell Labs",
+            "feedback": "Ding ding ding..."
+        },
+        {
+            "question": "Ubuntu, Fedora, SUSE, and Debian are examples of Linux _____________.",
+            "answer":   "Distributions",
+            "feedback": "A little research on the terms above "
+        },
+        {
+            "question": "Why are we allowed to use Linux without paying for it?",
+            "answer":   "Open source",
+            "feedback": "We're able to look at the Linux code. Why?"
+        }
+    ],
+    "flag": {
+        "user": "cmd01",
+        "flag": "HS21{welcome_to_linux}"
+    }
+}
