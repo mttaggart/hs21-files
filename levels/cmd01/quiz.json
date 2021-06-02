@@ -1,0 +1,28 @@
+{
+    "questions": [
+        {
+            "question" : "What is the current working directory?",
+            "answer"   : "/home/cmd01",
+            "feedback" : "What command prints the current working directory?"
+        },
+        {
+            "question" : "What is the current user name?",
+            "answer"   : "cmd01",
+            "feedback" : "How did you log in?"
+        },
+        {
+            "question" : "How many files in the current directory start with the x?",
+            "answer"   : "3",
+            "feedback" : "How do we look at hidden files?"
+        },
+        {
+            "question" : "Enter the contents of message.txt",
+            "answer"   : "Hello, hackers!"
+            "feedback" : "What command prints files to the shell?"
+        }
+    ],
+    "flag": {
+        "user":"cmd02",
+        "flag":"HS21{commands_are_like_spells}"
+    }
+}

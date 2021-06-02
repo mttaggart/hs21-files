@@ -1,0 +1,28 @@
+{
+    "questions": [
+        {
+            "question" : "What is the current user id?",
+            "answer"   : "1003",
+            "feedback" : "What command prints the id?"
+        },
+        {
+            "question" : "What command is this user able to run with sudo?",
+            "answer"   : "",
+            "feedback" : "How can we list sudo privileges?"
+        },
+        {
+            "question" : "What is the bit mode for User: rwx, Group: wx, and Other: x?",
+            "answer"   : "731",
+            "feedback" : "How do we convert rwx switches to binary, then to decimal?"
+        },
+        {
+            "question" : "Who is the owner of the hidden file in this home folder?",
+            "answer"   : "cmd03",
+            "feedback" : "How can we list all the files in long form?"
+        }
+    ],
+    "flag": {
+        "user":"cmd03",
+        "flag":"HS21{not_r00t_yet}"
+    }
+}

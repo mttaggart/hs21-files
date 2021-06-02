@@ -1,0 +1,28 @@
+{
+    "questions": [
+        {
+            "question" : "Write the output of runme to a file called runme.txt. What is the size in bytes of the resulting file??",
+            "answer"   : "",
+            "feedback" : "What command prints the id?"
+        },
+        {
+            "question" : "Append the text 'HACKSUMMER21' to runme.txt. What is the MD5 hash of the file?",
+            "answer"   : "",
+            "feedback" : "If only there were sum command to create md5 hashes..."
+        },
+        {
+            "question" : "Inside of runme.txt is a flag. Find it using grep and enter it here.",
+            "answer"   : "",
+            "feedback" : "What pattern do the flags follow?"
+        },
+        {
+            "question" : "Somewhere on this system is a file called cmd03flag.txt. Find it and enter the flag.",
+            "answer"   : "",
+            "feedback" : ""
+        },
+    ],
+    "flag": {
+        "user":"cmdchallenge",
+        "flag":"HS21{comb_the_desert}"
+    }
+}
