@@ -1,0 +1,28 @@
+{
+    "questions": [
+        {
+            "question" : "How do you enter insert mode?",
+            "answer"   : "i",
+            "feedback" : "Review your basic vim commands"
+        },
+        {
+            "question" : "How would we find and replace every exclamation point with a question mark in the current buffer?",
+            "answer"   : "s/!/?/g",
+            "feedback" : "regexr.com"
+        },
+        {
+            "question" : "How would we ask for help on what the 'x' key does?",
+            "answer"   : ":h x",
+            "feedback" : "You need help on asking for help?"
+        },
+        {
+            "question" : "How do we save and quit with a single command?",
+            "answer"   : "x",
+            "feedback" : "Look in the exit"
+        },
+        "flag" : {
+            "user" : "net01",
+            "flag" : "HS21{an_elegant_weapon}"
+        }
+    ]
+}
