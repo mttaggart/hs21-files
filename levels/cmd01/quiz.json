@@ -17,7 +17,7 @@
         },
         {
             "question" : "Enter the contents of message.txt",
-            "answer"   : "Hello, hackers!"
+            "answer"   : "Hello, hackers!",
             "feedback" : "What command prints files to the shell?"
         }
     ],
