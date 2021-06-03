@@ -19,7 +19,7 @@
             "question" : "Somewhere on this system is a file called cmd03flag.txt. Find it and enter the flag.",
             "answer"   : "",
             "feedback" : ""
-        },
+        }
     ],
     "flag": {
         "user":"cmdchallenge",
