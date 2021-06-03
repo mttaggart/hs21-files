@@ -1,0 +1,28 @@
+{
+    "questions" : [
+        {
+            "question" : "What is this machine's IP address?",
+            "answer"   : "<<IP>>",
+            "feedback" : "How can we show the addresses of the machine's network interfaces?"
+        },
+        {
+            "question" : "How many network interfaces are configured?",
+            "answer"   : "3",
+            "feedback" : "Did the previous command enumerate the interfaces?"
+        },
+        {
+            "question" : "What is the default gateway?",
+            "answer"   : "<<GATEWAY>>",
+            "feedback" : "The gateway is a route"
+        },
+        {
+            "question" : "What is the command to ping google.com 5 times?",
+            "answer"   : "ping -c 5 google.com",
+            "feedback" : "Ping needs an option flag for a count of packets to send."
+        },
+    ],
+    "flag": 
+        "user" : "net02",
+        "flag" : "HS21{over_the_wire}"
+    }
+}
