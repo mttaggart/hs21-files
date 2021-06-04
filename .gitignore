@@ -1,2 +1,5 @@
 *.swp
 quizengine/quizengine/__pycache__/
+quizengine/build/
+quizengine/dist/
+quizengine/quizengine.egg-info/
