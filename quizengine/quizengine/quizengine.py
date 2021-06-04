@@ -33,14 +33,3 @@ class Question:
     def ask(self):
         response = input(f"{self.question} ")
         return self.answer.lower() in response.lower()
-
-def main():
-    try:
-        quiz_file = sys.argv[1]
-    except:
-        print("Could not load quiz file")
-    quiz = Quiz(quiz_file)
-    quiz.run()
-
-if __name__ == "__main__":
-    main()
