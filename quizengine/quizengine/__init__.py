@@ -1,2 +1,2 @@
 __version__ = '0.1.0'
-import .quizengine
+from .quizengine import Quiz

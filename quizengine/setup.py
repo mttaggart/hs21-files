@@ -9,7 +9,5 @@ setup(name='quizengine',
       license='MIT',
       packages=['quizengine'],
       zip_safe=False,
-      entry_points={
-        'console_scripts': ['quizengine=quizengine.command_line:main']
-      }
+      scripts=["bin/quizengine"]
 )
