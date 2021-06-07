@@ -22,7 +22,7 @@
         },
         "flag" : {
             "user" : "net01",
-            "flag" : "HS21{an_elegant_weapon}"
+            "flag" : "<<FLAG>>"
         }
     ]
 }

@@ -2,12 +2,12 @@
     "questions": [
         {
             "question" : "What is the current user id?",
-            "answer"   : "1003",
+            "answer"   : "<<UID>>",
             "feedback" : "What command prints the id?"
         },
         {
             "question" : "What command is this user able to run with sudo?",
-            "answer"   : "",
+            "answer"   : "<<SUDOCMD>>",
             "feedback" : "How can we list sudo privileges?"
         },
         {
@@ -23,6 +23,6 @@
     ],
     "flag": {
         "user":"cmd03",
-        "flag":"HS21{not_r00t_yet}"
+        "flag":"<<FLAG>>"
     }
 }

@@ -23,6 +23,6 @@
     ],
     "flag": {
         "user": "cmd01",
-        "flag": "HS21{welcome_to_linux}"
+        "flag": "<<FLAG>>"
     }
 }

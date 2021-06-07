@@ -23,6 +23,6 @@
     ],
     "flag": {
         "user":"cmd02",
-        "flag":"HS21{commands_are_like_spells}"
+        "flag":"<<FLAG>>"
     }
 }

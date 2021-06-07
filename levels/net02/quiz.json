@@ -1,0 +1,18 @@
+{
+    "questions" : [
+        {
+            "question" : "What is this machine's IP address?",
+            "answer"   : "<<IP>>",
+            "feedback" : "How can we show the addresses of the machine's network interfaces?"
+        },
+        {
+            "question" : "How many network interfaces are configured?",
+            "answer"   : "3",
+            "feedback" : "Did the previous command enumerate the interfaces?"
+        }
+    ],
+    "flag": 
+        "user" : "netchallege",
+        "flag" : "<<FLAG>>"
+    }
+}
