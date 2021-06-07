@@ -26,7 +26,7 @@ for u in $USERDIRS; do
 
     # Configure quiz
     if [ -e levels/$u/quiz.json ]; then
-        sed -i -e "s/<<FLAG>>/HS21{$pw}"
+        sed -i -e "s/<<FLAG>>/HS21{$pw}/g"
     fi
 
 done
