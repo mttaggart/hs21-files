@@ -16,14 +16,17 @@ for u in $USERDIRS; do
     useradd -m -s /bin/bash $u
     echo $u:HS21{$pw} | chpasswd
 
+    LEVELDIR=levels/$u
+
     # Copy files
-    cp levels/$u/files/* /home/$u/
-    chown -R $u:$u /home/$u
+    if [ -d $LEVELDIR/files ]; then
+        cp levels/$u/files/* /home/$u/
+        chown -R $u:$u /home/$u
+    fi
 
     # Configure quiz
-    if [ -f levels/$u/quiz.json ]; then
+    if [ -e levels/$u/quiz.json ]; then
         sed -i -e "s/<<FLAG>>/HS21{$pw}"
     fi
+
 done
-
-
