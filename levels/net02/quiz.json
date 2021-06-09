@@ -1,14 +1,14 @@
 {
     "questions" : [
         {
-            "question" : "What is this machine's IP address?",
-            "answer"   : "<<IP>>",
-            "feedback" : "How can we show the addresses of the machine's network interfaces?"
+            "question" : "What is the default HTTP port?",
+            "answer"   : "80",
+            "feedback" : "This is searchable if you don't know."
         },
         {
-            "question" : "How many network interfaces are configured?",
-            "answer"   : "3",
-            "feedback" : "Did the previous command enumerate the interfaces?"
+            "question" : "Use netcat to send 'Hello' to google.com on port 80. What is the response code?",
+            "answer"   : "400",
+            "feedback" : "How do we read HTTP headers?"
         }
     ],
     "flag": 
