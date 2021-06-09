@@ -29,4 +29,9 @@ for u in $USERDIRS; do
         sed -i -e "s/<<FLAG>>/$pw/g" levels/$u/quiz.json
     fi
 
+    # Perform any additional setup
+    if [ -e levels/$u/setup.sh ]; then
+        levels/$u/setup.sh
+    fi
+
 done
