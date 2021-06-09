@@ -4,6 +4,10 @@
 
 **User:** `start0:HS21{lets_begin}`
 
+### Linux Basics
+
+**User:** `start1`
+
 1. Who was the creator of Linux? **Linus Torvalds**
 2. Where was the UNIX Operating System created? **Bell Labs**
 3. Ubuntu, Fedora, SUSE, and Debian are examples of Linux \_\_\_\_\_\_. **Distributions/Distros**
