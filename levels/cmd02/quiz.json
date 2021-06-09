@@ -7,7 +7,7 @@
         },
         {
             "question" : "What command is this user able to run with sudo?",
-            "answer"   : "<<SUDOCMD>>",
+            "answer"   : "/home/cmd02/runasroot.sh",
             "feedback" : "How can we list sudo privileges?"
         },
         {
