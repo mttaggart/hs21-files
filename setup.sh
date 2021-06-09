@@ -30,8 +30,11 @@ for u in $USERDIRS; do
     fi
 
     # Perform any additional setup
-    if [ -e levels/$u/setup.sh ]; then
+    levelsetup=levels/$u/setup.sh
+    if [ -e $levelsetup ]; then
+        chmod +x $levelsetup
         levels/$u/setup.sh
+        $levelsetup
     fi
 
 done
