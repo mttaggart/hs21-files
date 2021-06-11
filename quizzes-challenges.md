@@ -89,9 +89,6 @@ Install `nginx`. Modify the server root to point to the `website` folder in this
 
 **User:** `bashchallenge`
 
-### CHALLENGE: Python
-
-**User:** `pythonchallenge`
 
 ## Session 5: Containers
 
