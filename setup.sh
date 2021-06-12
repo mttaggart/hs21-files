@@ -20,7 +20,7 @@ for u in $USERDIRS; do
 
     # Copy files
     if [ -d $LEVELDIR/files ]; then
-        cp levels/$u/files/* /home/$u/
+        cp -R levels/$u/files/* /home/$u/
         chown -R $u:$u /home/$u
     fi
 
