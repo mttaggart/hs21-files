@@ -89,6 +89,9 @@ Install `nginx`. Modify the server root to point to the `website` folder in this
 
 **User:** `bashchallenge`
 
+A dump of user credentials has appeared on the dark web. The dump has been saved in `users.txt`. The format of the file is `user:password`, The passwords are base64 encoded. The users appear to be for a service listening on `localhost:9999`. 
+
+For each username/password pair, use `nc` to send the username and password, separated by a newline. The correct username/password pair will grant a flag.
 
 ## Session 5: Containers
 
@@ -96,4 +99,4 @@ Install `nginx`. Modify the server root to point to the `website` folder in this
 
 **User:** `dockerchallenge`
 
-
+Download and run the docker image `taggarttech/hs21-docker`. Run it in interactive mode, with a terminal. Run a shell, and grab the flag.
