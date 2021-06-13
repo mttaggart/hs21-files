@@ -13,10 +13,10 @@ for u in $USERDIRS; do
 
     LEVELDIR=levels/$u
     HOMEDIR=/home/$u
-    NEXT_USER = `cat $LEVELDIR/nextuser.txt`
+    NEXT_USER=`cat $LEVELDIR/nextuser.txt`
     PW=HS21{`curl --no-progress-meter https://passphrase.taggart-tech.com/api/pw`}
     
-    if [ $u -eq start0 ]; then 
+    if [ $u = $start0 ]; then 
         echo start0:HS21{lets_begin} | chpasswd
         # Make finale user while we're here
         useradd -m -s /bin/bash finale
