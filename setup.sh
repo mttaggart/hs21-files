@@ -3,30 +3,39 @@
 # Set up users
 USERDIRS=`ls levels`
 
-# Make start0
-useradd -m -s /bin/bash start0
-echo start0:HS21{lets_begin} | chpasswd
-
 for u in $USERDIRS; do
-    pw=HS21{`curl --no-progress-meter https://passphrase.taggart-tech.com/api/pw`}
+
     echo "Making user $u"
     #echo $u:$pw
+
+    LEVELDIR=levels/$u
+    NEXT_USER = `cat $LEVELDIR/nextuser.txt`
+    PW=HS21{`curl --no-progress-meter https://passphrase.taggart-tech.com/api/pw`}
+    
+    if [ $u -eq start0 ]; then 
+        echo start0:HS21{lets_begin} | chpasswd
+        # Make finale user while we're here
+        useradd -m -s /bin/bash finale
+    fi
     
     # Make user
     useradd -m -s /bin/bash $u
-    echo $u:HS21{$pw} | chpasswd
-
-    LEVELDIR=levels/$u
-
+    echo $NEXT_USER:HS21{$PW} | chpasswd
+    
     # Copy files
     if [ -d $LEVELDIR/files ]; then
-        cp -R levels/$u/files/* /home/$u/
+        cp -R $LEVELDIRfiles/* /home/$u/
         chown -R $u:$u /home/$u
     fi
 
     # Configure quiz
     if [ -e levels/$u/quiz.json ]; then
         sed -i -e "s/<<FLAG>>/$pw/g" levels/$u/quiz.json
+        cat <<EOF > /home/$u/quiz
+#!/bin/bash
+/home/hs21/quizengine/bin/quizengine levels/$u/quiz.json
+EOF
+        chmod 711 /home/$u/quiz
     fi
 
     # Perform any additional setup
