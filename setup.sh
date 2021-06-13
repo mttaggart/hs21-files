@@ -3,9 +3,24 @@
 # Back up sudoers
 cp /etc/sudoers /etc/sudoers.bak
 
+
+
 # Set up users
 USERDIRS=`ls levels`
 
+# Make users
+for u in $USERDIRS; do
+
+    useradd -m -s /bin/bash $u
+    # Setup the first user's password
+    if [ "$u" = "$start0" ]; then 
+        echo start0:HS21{lets_begin} | chpasswd
+        # Make finale user while we're here
+        useradd -m -s /bin/bash finale
+    fi
+done
+   
+# Now, set passwords and do all setups
 for u in $USERDIRS; do
 
     echo "Making user $u"
@@ -16,14 +31,7 @@ for u in $USERDIRS; do
     NEXT_USER=`cat $LEVELDIR/nextuser.txt`
     PW=HS21{`curl --no-progress-meter https://passphrase.taggart-tech.com/api/pw`}
     
-    if [ $u = $start0 ]; then 
-        echo start0:HS21{lets_begin} | chpasswd
-        # Make finale user while we're here
-        useradd -m -s /bin/bash finale
-    fi
-    
-    # Make user
-    useradd -m -s /bin/bash $u
+    # set user password
     echo $NEXT_USER:HS21{$PW} | chpasswd
     
     # Copy files
