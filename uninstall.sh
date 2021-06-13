@@ -7,8 +7,14 @@ for u in $USERDIRS; do
     userdel -r $u
 done
 
-# Kill start0
-userdel -r start0
+# Kill finale
+userdel -r finale
 
 # Reset quiz files
 git reset --hard HEAD
+
+# Fix sudoers
+if [ -e /etc/sudoers.bak ]; then
+    rm /etc/sudoers
+    mv /etc/sudoers.bak /etc/sudoers
+fi
