@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Back up sudoers
+cp /etc/sudoers /etc/sudoers.bak
+
 # Set up users
 USERDIRS=`ls levels`
 
@@ -9,6 +12,7 @@ for u in $USERDIRS; do
     #echo $u:$pw
 
     LEVELDIR=levels/$u
+    HOMEDIR=/home/$u
     NEXT_USER = `cat $LEVELDIR/nextuser.txt`
     PW=HS21{`curl --no-progress-meter https://passphrase.taggart-tech.com/api/pw`}
     
@@ -24,8 +28,8 @@ for u in $USERDIRS; do
     
     # Copy files
     if [ -d $LEVELDIR/files ]; then
-        cp -R $LEVELDIRfiles/* /home/$u/
-        chown -R $u:$u /home/$u
+        cp -R $LEVELDIRfiles/* $HOMEDIR/
+        chown -R $u:$u $HOMEDIR
     fi
 
     # Configure quiz
@@ -35,14 +39,13 @@ for u in $USERDIRS; do
 #!/bin/bash
 /home/hs21/quizengine/bin/quizengine levels/$u/quiz.json
 EOF
-        chmod 711 /home/$u/quiz
+        chmod 711 $HOMEDIR/quiz
     fi
 
     # Perform any additional setup
-    levelsetup=levels/$u/setup.sh
+    levelsetup=$LEVELDIR/setup.sh
     if [ -e $levelsetup ]; then
         chmod +x $levelsetup
-        levels/$u/setup.sh
         $levelsetup
     fi
 
