@@ -32,7 +32,7 @@ for u in $USERDIRS; do
     PW=HS21{`curl --no-progress-meter https://passphrase.taggart-tech.com/api/pw`}
     
     # set user password
-    echo $NEXT_USER:HS21{$PW} | chpasswd
+    echo $NEXT_USER:$PW | chpasswd
     
     # Copy files
     if [ -d $LEVELDIR/files ]; then
@@ -47,7 +47,7 @@ for u in $USERDIRS; do
 #!/bin/bash
 /home/hs21/quizengine/bin/quizengine levels/$u/quiz.json
 EOF
-        chmod 711 $HOMEDIR/quiz
+        chmod 755 $HOMEDIR/quiz
     fi
 
     # Perform any additional setup
