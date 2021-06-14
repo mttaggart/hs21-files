@@ -13,6 +13,7 @@ echo "cmd02 ALL=(ALL:ALL) /home/cmd02/runasroot.sh" >> /etc/sudoers
 RUNASROOT=/home/cmd02/runasroot.sh
 chown root:root $RUNASROOT
 chmod 711 $RUNASROOT
-chmod +s $RUNASROOT
 
-
+# Create hidden file
+touch /home/cmd02/.cantseeme
+chown cmd03:cmd02 /home/cmd02/.cantseeme
