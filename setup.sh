@@ -13,7 +13,7 @@ for u in $USERDIRS; do
 
     useradd -m -s /bin/bash $u
     # Setup the first user's password
-    if [ "$u" = "$start0" ]; then 
+    if [ "$u" = "start0" ]; then 
         echo start0:HS21{lets_begin} | chpasswd
         # Make finale user while we're here
         useradd -m -s /bin/bash finale
