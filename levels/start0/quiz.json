@@ -4,7 +4,7 @@
             "question": "This is how quizzes work. Enter 'hacksummer' for your answer",
             "answer":   "hacksummer",
             "feedback": "Did you read the instructions?"
-        },
+        }
     ],
     "flag": {
         "user": "start1",
