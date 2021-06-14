@@ -45,7 +45,7 @@ for u in $USERDIRS; do
         sed -i -e "s/<<FLAG>>/$PW/g" levels/$u/quiz.json
         cat <<EOF > /home/$u/quiz
 #!/bin/bash
-/home/hs21/quizengine/bin/quizengine levels/$u/quiz.json
+/home/hs21/hs21-files/quizengine/bin/quizengine levels/$u/quiz.json
 EOF
         chmod 755 $HOMEDIR/quiz
     fi
