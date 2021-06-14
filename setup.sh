@@ -3,8 +3,6 @@
 # Back up sudoers
 cp /etc/sudoers /etc/sudoers.bak
 
-
-
 # Set up users
 USERDIRS=`ls levels`
 
