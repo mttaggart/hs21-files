@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Get uid
-uid=`id | cut -d " " -f 1 | sed -e "s/uid=[0-9]\+(\(.\+\))/\1/g"`
+uid=`id | cut -d " " -f 1 | sed -e "s/uid=\([0-9]\+\)(\(.\+\))/\1/g"`
 
 # Fill in uid
 sed -ie "s/<<UID>>/$uid/g" /home/hs21/hs21-files/levels/cmd02/quiz.json
