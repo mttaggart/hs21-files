@@ -42,7 +42,7 @@ for u in $USERDIRS; do
 
     # Configure quiz
     if [ -e levels/$u/quiz.json ]; then
-        sed -i -e "s/<<FLAG>>/$pw/g" levels/$u/quiz.json
+        sed -i -e "s/<<FLAG>>/$PW/g" levels/$u/quiz.json
         cat <<EOF > /home/$u/quiz
 #!/bin/bash
 /home/hs21/quizengine/bin/quizengine levels/$u/quiz.json
