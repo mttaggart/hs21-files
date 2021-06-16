@@ -1,3 +1,23 @@
-#!/bin/bash
+#!/usr/bin/python3
+import random
+import json
 
-echo "Here's a bunch of text!"
+QUIZ_FILE = "<<QUIZ_FILE>>"
+
+CHARS = "HS{}abcdefghijklmnopqrstuvwxyz_0123456789"
+
+MIN_LENGTH = 10
+MAX_LENGTH = 30
+TOTAL_LINES = 10000
+
+lines = []
+for l in range(TOTAL_LINES):
+    line_length = random.randint(MIN_LENGTH, MAX_LENGTH)
+    lines.append("HS21" + "".join([CHARS[random.randint(0, len(CHARS) - 1)] for i in range(line_length)]))
+
+with open(QUIZ_FILE) as f:
+    quiz_data = json.load(f)
+    lines.insert(random.randint(0, len(lines) - 1), f["questions"][2]["flag"])
+
+for line in lines:
+    print(line)
