@@ -13,7 +13,7 @@ echo $FINDFLAG > /tmp/hs21/cmd03/cmd03flag.txt
 
 # Setup runme
 echo "Setting up runme"
-sed -i -e "s/<<QUIZ_FILE>>/$QUIZ_FILE/g" /home/cmd03/runme
+sed -i -e "s@<<QUIZ_FILE>>@$QUIZ_FILE@g" /home/cmd03/runme
 
 
 # Setup quiz file

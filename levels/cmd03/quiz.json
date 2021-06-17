@@ -2,7 +2,7 @@
     "questions": [
         {
             "question" : "Write the output of runme to a file called runme.txt. How many lines are in there?",
-            "answer"   : "1001",
+            "answer"   : "10001",
             "feedback" : "What command can show line counts?"
         },
         {
