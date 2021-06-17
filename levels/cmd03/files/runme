@@ -17,7 +17,7 @@ for l in range(TOTAL_LINES):
 
 with open(QUIZ_FILE) as f:
     quiz_data = json.load(f)
-    lines.insert(random.randint(0, len(lines) - 1), f["questions"][2]["flag"])
+    lines.insert(random.randint(0, len(lines) - 1), quiz_data["questions"][2]["answer"])
 
 for line in lines:
     print(line)
