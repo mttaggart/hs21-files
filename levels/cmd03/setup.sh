@@ -9,12 +9,17 @@ FINDFLAG=HS21{`curl --no-progress-meter https://passphrase.taggart-tech.com/api/
 
 # Setup find
 mkdir -p /tmp/hs21/cmd03
-echo $FLAG > /tmp/hs21/cmd03/cmd03flag.txt
+echo $FINDFLAG > /tmp/hs21/cmd03/cmd03flag.txt
 
 # Setup runme
-sed -ie "s/<<QUIZ_FILE>>/$QUIZ_FILE/g" /home/cmd03/runme
-sed -ie "s/<<FLAG>>/$FLAG/g" $QUIZ_FILE
-sed -ie "s/<<GREPFLAG>>/$GREPFLAG/g" $QUIZ_FILE
-sed -ie "s/<<FINDFLAG>>/$FINDFLAG/g" $QUIZ_FILE
+echo "Setting up runme"
+sed -i -e "s/<<QUIZ_FILE>>/$QUIZ_FILE/g" /home/cmd03/runme
+
+
+# Setup quiz file
+echo "Setting up quiz file"
+sed -i -e "s/<<FLAG>>/$FLAG/g" $QUIZ_FILE
+sed -i -e "s/<<GREPFLAG>>/$GREPFLAG/g" $QUIZ_FILE
+sed -i -e "s/<<FINDFLAG>>/$FINDFLAG/g" $QUIZ_FILE
 
 chmod 711 /home/cmd03/runme
