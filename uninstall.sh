@@ -18,3 +18,8 @@ if [ -e /etc/sudoers.bak ]; then
     rm /etc/sudoers
     mv /etc/sudoers.bak /etc/sudoers
 fi
+
+# Check for nginx
+if [ -e /etc/nginx/nginx.conf ]; then
+    apt remove --purge nginx
+fi
