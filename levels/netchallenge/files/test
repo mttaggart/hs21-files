@@ -19,7 +19,7 @@ fi
 # Try website
 res=`curl http://localhost:8080`
 
-HTML=$(cat <<-EOF
+HTML=$(cat << EOF
 <html>
     <head>
         <title>You did it!</title>
