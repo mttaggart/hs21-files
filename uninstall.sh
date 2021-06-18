@@ -20,6 +20,6 @@ if [ -e /etc/sudoers.bak ]; then
 fi
 
 # Check for nginx
-if [ -e /etc/nginx/nginx.conf ]; then
-    apt remove --purge nginx
+if [ -e /usr/sbin/nginx ]; then
+    apt remove -y --purge nginx
 fi

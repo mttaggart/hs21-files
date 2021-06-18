@@ -7,14 +7,11 @@ FLAG="<<FLAG>>"
 
 if [ -e /etc/nginx/nginx.conf ]; then
     echo "[+] Nginx has been installed"
-    # Restart service to load config
-    systemctl restart nginx
 else
     echo "[-] Nginx not installed"
     echo "[?] How do we install packages?"
     exit 1
 fi
-
 
 # Try website
 res=`curl http://localhost:8080`
@@ -31,7 +28,7 @@ HTML=$(cat <<-EOF
 EOF
 )
 
-if [ "HTML" = "$res" ]; then
+if [ "HTML" = $res ]; then
     echo "[+] HTML output matches!"
     echo "[+] Congrats! Here's a flag: $NEXT_USER:$FLAG"
 fi

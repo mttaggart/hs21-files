@@ -43,9 +43,20 @@ for u in $USERDIRS; do
         sed -i -e "s/<<FLAG>>/$PW/g" levels/$u/quiz.json
         cat <<EOF > /home/$u/quiz
 #!/bin/bash
-/home/hs21/hs21-files/quizengine/bin/quizengine /home/$SUDO_USER/hs21-files/levels/$u/quiz.json
+/home/$SUDO_USER/hs21-files/quizengine/bin/quizengine /home/$SUDO_USER/hs21-files/levels/$u/quiz.json
 EOF
         chmod 755 $HOMEDIR/quiz
+    fi
+
+    # Configure test
+    if [ -e $LEVELDIR/test ]; then
+        sed -ie "s/<<FLAG>>/$PW/g" $LEVELDIR/test
+        sed -ie "s/<<NEXT_USER>>/$NEXT_USER/g" $LEVELDIR/test
+        cat <<EOF > /home/$u/test
+#!/bin/bash
+/home/$SUDO_USER/hs21-files/levels/$u/test $HOMEDIR/test
+EOF
+        chmod 755 $HOMEDIR/test
     fi
 
     # Perform any additional setup
