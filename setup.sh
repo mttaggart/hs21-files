@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# First, install rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
 # Back up sudoers
 cp /etc/sudoers /etc/sudoers.bak
 
@@ -49,14 +52,11 @@ EOF
     fi
 
     # Configure test
-    if [ -e $LEVELDIR/test ]; then
-        sed -ie "s/<<FLAG>>/$PW/g" $LEVELDIR/test
-        sed -ie "s/<<NEXT_USER>>/$NEXT_USER/g" $LEVELDIR/test
-        cat <<EOF > /home/$u/test
-#!/bin/bash
-/home/$SUDO_USER/hs21-files/levels/$u/test $HOMEDIR/test
-EOF
-        chmod 755 $HOMEDIR/test
+    if [ -e $LEVELDIR/test.rs ]; then
+        sed -ie "s/<<FLAG>>/$PW/g" $LEVELDIR/test.rs
+        sed -ie "s/<<NEXT_USER>>/$NEXT_USER/g" $LEVELDIR/test.rs
+        rustc $LEVELDIR/test.rs -o $HOMEDIR/test
+        chmod 4711 $HOMEDIR/test
     fi
 
     # Perform any additional setup

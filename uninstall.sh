@@ -22,4 +22,5 @@ fi
 # Check for nginx
 if [ -e /usr/sbin/nginx ]; then
     apt remove -y --purge nginx
+    apt autoremove
 fi
