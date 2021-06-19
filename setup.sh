@@ -51,6 +51,13 @@ EOF
         chmod 755 $HOMEDIR/quiz
     fi
 
+    # Perform any additional setup
+    levelsetup=$LEVELDIR/setup.sh
+    if [ -e $levelsetup ]; then
+        chmod +x $levelsetup
+        $levelsetup
+    fi
+    
     # Configure test
     if [ -e $LEVELDIR/test.rs ]; then
         sed -ie "s/<<FLAG>>/$PW/g" $LEVELDIR/test.rs
@@ -59,11 +66,5 @@ EOF
         chmod 4711 $HOMEDIR/test
     fi
 
-    # Perform any additional setup
-    levelsetup=$LEVELDIR/setup.sh
-    if [ -e $levelsetup ]; then
-        chmod +x $levelsetup
-        $levelsetup
-    fi
 
 done
