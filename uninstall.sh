@@ -28,3 +28,8 @@ fi
 
 # Remove bash challenge svc
 rm /opt/bashchallengesvc
+
+# Remove Docker image/containers
+docker container prune -f
+docker image rm -f dockerchallenge:latest
+docker image prune -f
