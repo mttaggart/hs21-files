@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # First, install rust and jq
-sudo apt install -y rustc jq
+sudo apt install -y rustc jq docker.io
 
 # Back up sudoers
 cp /etc/sudoers /etc/sudoers.bak
