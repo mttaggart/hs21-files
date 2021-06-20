@@ -89,9 +89,11 @@ Install `nginx`. Modify the server root to point to the `website` folder in this
 
 **User:** `bashchallenge`
 
-A dump of user credentials has appeared on the dark web. The dump has been saved in `users.txt`. The format of the file is `user:password`, The passwords are base64 encoded. The users appear to be for a service listening on `localhost:9999`. 
+A service on this machine expects the correct username and password to login. You have a list of usernames and passwords to test, but this lists are too long to attempt manually. The service runs on network port 9999 and expects to receive credentials in the form of `username:password`.
 
-For each username/password pair, use `nc` to send the username and password, separated by a newline. The correct username/password pair will grant a flag.
+Write a bash script to "brute force" every username/password combination to find the correct one.
+
+To start the service, first run `/opt/bashchallengesvc &`
 
 ## Session 5: Containers
 
