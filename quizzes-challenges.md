@@ -8,10 +8,10 @@
 
 **User:** `start1`
 
-1. Who was the creator of Linux? **Linus Torvalds**
-2. Where was the UNIX Operating System created? **Bell Labs**
-3. Ubuntu, Fedora, SUSE, and Debian are examples of Linux \_\_\_\_\_\_. **Distributions/Distros**
-4. Why are we allowed to use Linux without paying for it? **Open source**
+1. Who was the creator of Linux?
+2. Where was the UNIX Operating System created?
+3. Ubuntu, Fedora, SUSE, and Debian are examples of Linux \_\_\_\_\_\_.
+4. Why are we allowed to use Linux without paying for it? 
 
 ## Session 1: The Command Line:
 
@@ -54,10 +54,10 @@ In this challenge, you have to find the pieces of the flag and put them together
 
 **User:** `vim01`
 
-1. How do you enter insert mode? **i**.
-2. How would we find and replace every exclamation point with a question mark in the current buffer? **%s/!/?/g**
-3. How would we ask for help on what the `x` key does? **:h x**
-4. How do we save and quit with a single command? **x**
+1. How do you enter insert mode? 
+2. How would we find and replace every exclamation point with a question mark in the current buffer?
+3. How would we ask for help on what the `x` key does?
+4. How do we save and quit with a single command?
 
 ## Sesssion 3: Networking
 
@@ -68,7 +68,7 @@ In this challenge, you have to find the pieces of the flag and put them together
 1. What is this machine's IP address?
 2. How many network interfaces are configured?
 3. What is the default gateway? 
-4. Enter the command to ping `google.com` 5 times. **ping -c 5 google.com**
+4. Enter the command to ping `google.com` 5 times.
 
 ### Clients and Servers
 
@@ -77,7 +77,7 @@ In this challenge, you have to find the pieces of the flag and put them together
 1. What is the default HTTP port? **80**
 2. Use netcat to connect to <<URL>>. What is the flag?
 
-### CHALLENGE
+### CHALLENGE: Web Server
 
 **User:** `netchallenge`
 
@@ -101,4 +101,4 @@ To start the service, first run `/opt/bashchallengesvc &`
 
 **User:** `dockerchallenge`
 
-Download and run the docker image `taggarttech/hs21-docker`. Run it in interactive mode, with a terminal. Run a shell, and grab the flag.
+A Docker image is available on this machine. Run a shell in it in interactive mode, and seek the flag in common locations.
