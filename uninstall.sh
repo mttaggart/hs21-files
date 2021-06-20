@@ -23,4 +23,8 @@ fi
 if [ -e /usr/sbin/nginx ]; then
     apt remove -y --purge nginx
     apt autoremove
+    rm -rf /etc/nginx
 fi
+
+# Remove bash challenge svc
+rm /opt/bashchallengesvc
