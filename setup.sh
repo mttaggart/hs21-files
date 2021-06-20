@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# First, install rust
-sudo apt install -y rustc
+# First, install rust and jq
+sudo apt install -y rustc jq
 
 # Back up sudoers
 cp /etc/sudoers /etc/sudoers.bak
