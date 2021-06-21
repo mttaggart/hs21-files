@@ -25,3 +25,6 @@ sed -ie "s/<<FLAG>>/$FLAG/g" $SVC_SOURCE
 # Compile/chmod service
 rustc -o $SVC_DEST $SVC_SOURCE
 chmod 4711 $SVC_DEST
+
+# Remove extraneous quiz
+rm $HOMEDIR/quiz
