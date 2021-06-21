@@ -48,7 +48,7 @@ for u in $USERDIRS; do
 #!/bin/bash
 /home/$SUDO_USER/hs21-files/quizengine/bin/quizengine /home/$SUDO_USER/hs21-files/levels/$u/quiz.json
 EOF
-        chmod 755 $HOMEDIR/quiz
+        chmod 4755 $HOMEDIR/quiz
     fi
 
     # Perform any additional setup
@@ -66,5 +66,8 @@ EOF
         chmod 4711 $HOMEDIR/test
     fi
 
-
 done
+
+# Make root user unreadable by everyone else
+chmod 700 /home/$SUDO_USER/hs21-files
+echo "Setup complete! Login to user start0 with the password HS21{lets_begin}."
