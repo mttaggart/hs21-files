@@ -27,7 +27,7 @@ fn check_login(login: &String) -> bool {
 fn handle_client(mut socket: BufTcpStream) {
     let mut login = String::new();
     let flag = String::from("<<NEXT_USER>>:<<FLAG>>");
-    socket.rx.read_line(&mut login);
+    socket.rx.read_line(&mut login).unwrap();
     
     if check_login(&login) {
         socket.tx.write_all(flag.as_bytes()).unwrap();
