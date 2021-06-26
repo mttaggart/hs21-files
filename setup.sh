@@ -6,6 +6,10 @@ sudo apt install -y rustc jq docker.io
 # Back up sudoers
 cp /etc/sudoers /etc/sudoers.bak
 
+# Install quiz engine
+cargo install --git https://github.com/mttaggart/hsquiz --branch main
+QUIZENGINE_BINPATH=/root/.cargo/bin/hsquiz
+
 # Set up users
 USERDIRS=`ls levels`
 
@@ -27,7 +31,7 @@ for u in $USERDIRS; do
     echo "Making user $u"
     #echo $u:$pw
 
-    LEVELDIR=levels/$u
+    LEVELDIR=/home/$SUDO_USER/hs21-files/levels/$u
     HOMEDIR=/home/$u
     NEXT_USER=`cat $LEVELDIR/nextuser.txt`
     PW=HS21{`curl --no-progress-meter https://passphrase.taggart-tech.com/api/pw`}
@@ -38,17 +42,28 @@ for u in $USERDIRS; do
     # Copy files
     if [ -d $LEVELDIR/files ]; then
         cp -R $LEVELDIR/files/* $HOMEDIR/
+        # Hidden files too
+        cp -R $LEVELDIR/files/.* $HOMEDIR/
         chown -R $u:$u $HOMEDIR
     fi
 
     # Configure quiz
-    if [ -e levels/$u/quiz.json ]; then
-        sed -i -e "s/<<FLAG>>/$PW/g" levels/$u/quiz.json
-        cat <<EOF > /home/$u/quiz
+    if [ -e $LEVELDIR/quiz.json ]; then
+        QUIZ_TEMPLATE=./quiztemplate.rs
+        QUIZFILE=$LEVELDIR/quiz.json
+        QUIZ_SRC=$LEVELDIR/quiz.rs
+        QUIZ_DEST=$HOMEDIR/quiz
+        cp $QUIZ_TEMPLATE $QUIZ_SRC
+        sed -ie "s@<<QUIZENGINE_BINPATH>>@$QUIZENGINE_BINPATH@g" $QUIZ_SRC
+        sed -ie "s@<<QUIZFILE>>@$QUIZFILE@g" $QUIZ_SRC
+        rustc -o $QUIZ_DEST $QUIZ_SRC
+
+        sed -i -e "s/<<FLAG>>/$PW/g" $QUIZFILE
+        #cat <<EOF > /home/$u/quiz
 #!/bin/bash
-/home/$SUDO_USER/hs21-files/quizengine/bin/quizengine /home/$SUDO_USER/hs21-files/levels/$u/quiz.json
-EOF
-        chmod 4755 $HOMEDIR/quiz
+#/home/$SUDO_USER/hs21-files/quizengine/bin/quizengine /home/$SUDO_USER/hs21-files/levels/$u/quiz.json
+#EOF
+        chmod 4755 $QUIZ_DEST
     fi
 
     # Perform any additional setup

@@ -13,6 +13,9 @@ userdel -r finale
 # Reset quiz files
 git reset --hard HEAD
 
+# Uninstall quiz engine
+cargo uninstall hsquiz
+
 # Fix sudoers
 if [ -e /etc/sudoers.bak ]; then
     rm /etc/sudoers
