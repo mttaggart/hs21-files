@@ -42,8 +42,6 @@ for u in $USERDIRS; do
     # Copy files
     if [ -d $LEVELDIR/files ]; then
         cp -R $LEVELDIR/files/* $HOMEDIR/
-        # Hidden files too
-        cp -R $LEVELDIR/files/.* $HOMEDIR/
         chown -R $u:$u $HOMEDIR
     fi
 
