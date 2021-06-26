@@ -24,6 +24,5 @@ sed -i -e "s/<<FINDFLAG>>/$FINDFLAG/g" $QUIZ_FILE
 
 # Change runme perms
 chown root:root $RUNME
-chmod 711 $RUNME
-chmod +s $RUNME
+chmod 4755 $RUNME
 
