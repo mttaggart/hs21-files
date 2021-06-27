@@ -19,7 +19,7 @@
             "question" : "What is the command to ping google.com 5 times?",
             "answer"   : "ping -c 5 google.com",
             "feedback" : "Ping needs an option flag for a count of packets to send."
-        },
+        }
     ],
     "flag": 
         "user" : "net02",

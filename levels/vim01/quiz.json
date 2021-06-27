@@ -19,10 +19,10 @@
             "question" : "How do we save and quit with a single command?",
             "answer"   : "x",
             "feedback" : "Look in the exit"
-        },
-        "flag" : {
-            "user" : "net01",
-            "flag" : "<<FLAG>>"
         }
-    ]
+    ],
+    "flag" : {
+        "user" : "net01",
+        "flag" : "<<FLAG>>"
+    }
 }
