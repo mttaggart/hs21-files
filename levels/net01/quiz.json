@@ -21,7 +21,7 @@
             "feedback" : "Ping needs an option flag for a count of packets to send."
         }
     ],
-    "flag": 
+    "flag": {
         "user" : "net02",
         "flag" : "<<FLAG>>"
     }
