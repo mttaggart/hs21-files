@@ -52,8 +52,8 @@ for u in $USERDIRS; do
         QUIZ_SRC=$LEVELDIR/quiz.rs
         QUIZ_DEST=$HOMEDIR/quiz
         cp $QUIZ_TEMPLATE $QUIZ_SRC
-        sed -ie "s@<<QUIZENGINE_BINPATH>>@$QUIZENGINE_BINPATH@g" $QUIZ_SRC
-        sed -ie "s@<<QUIZFILE>>@$QUIZFILE@g" $QUIZ_SRC
+        sed -i -e "s@<<QUIZENGINE_BINPATH>>@$QUIZENGINE_BINPATH@g" $QUIZ_SRC
+        sed -i -e "s@<<QUIZFILE>>@$QUIZFILE@g" $QUIZ_SRC
         rustc -o $QUIZ_DEST $QUIZ_SRC
 
         sed -i -e "s/<<FLAG>>/$PW/g" $QUIZFILE
