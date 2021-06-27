@@ -22,6 +22,9 @@ sed -i -e "s/<<FLAG>>/$FLAG/g" $QUIZ_FILE
 sed -i -e "s/<<GREPFLAG>>/$GREPFLAG/g" $QUIZ_FILE
 sed -i -e "s/<<FINDFLAG>>/$FINDFLAG/g" $QUIZ_FILE
 
+# Add sudoers
+echo "cmd03 ALL=(ALL:ALL) /home/cmd03/runme" >> /etc/sudoers
+
 # Change runme perms
 chown root:root $RUNME
 chmod 4755 $RUNME
