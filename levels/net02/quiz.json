@@ -11,7 +11,7 @@
             "feedback" : "How do we read HTTP headers?"
         }
     ],
-    "flag": 
+    "flag": {
         "user" : "netchallege",
         "flag" : "<<FLAG>>"
     }
