@@ -73,8 +73,8 @@ for u in $USERDIRS; do
     
     # Configure test
     if [ -e $LEVELDIR/test.rs ]; then
-        sed -ie "s/<<FLAG>>/$PW/g" $LEVELDIR/test.rs
-        sed -ie "s/<<NEXT_USER>>/$NEXT_USER/g" $LEVELDIR/test.rs
+        sed -i -e "s/<<FLAG>>/$PW/g" $LEVELDIR/test.rs
+        sed -i -e "s/<<NEXT_USER>>/$NEXT_USER/g" $LEVELDIR/test.rs
         rustc $LEVELDIR/test.rs -o $HOMEDIR/test
         chmod 4711 $HOMEDIR/test
     fi

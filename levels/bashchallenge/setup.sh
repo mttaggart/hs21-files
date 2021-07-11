@@ -17,10 +17,10 @@ USERNAME=`head -n $USER_IDX $USERFILE | tail -n +$USER_IDX`
 PASSWORD=`head -n $PW_IDX $PWFILE | tail -n +$PW_IDX`
 
 # Replace wildcards
-sed -ie "s/<<USERNAME>>/$USERNAME/g" $SVC_SOURCE
-sed -ie "s/<<PASSWORD>>/$PASSWORD/g" $SVC_SOURCE
-sed -ie "s/<<NEXT_USER>>/$NEXT_USER/g" $SVC_SOURCE
-sed -ie "s/<<FLAG>>/$FLAG/g" $SVC_SOURCE
+sed -i -e "s/<<USERNAME>>/$USERNAME/g" $SVC_SOURCE
+sed -i -e "s/<<PASSWORD>>/$PASSWORD/g" $SVC_SOURCE
+sed -i -e "s/<<NEXT_USER>>/$NEXT_USER/g" $SVC_SOURCE
+sed -i -e "s/<<FLAG>>/$FLAG/g" $SVC_SOURCE
 
 # Compile/chmod service
 rustc -o $SVC_DEST $SVC_SOURCE
