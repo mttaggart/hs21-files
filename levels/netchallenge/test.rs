@@ -35,6 +35,8 @@ fn main() -> std::io::Result<()> {
     if html_test == out_string {
         println!("[+] Nginx points to correct file");
         println!("[+] Congrats! Heres a flag: {}:{}", username, flag);
+    } else {
+        println!("[-] Nginx server does not seem to point to the right file!")
     }
 
     Ok(())
